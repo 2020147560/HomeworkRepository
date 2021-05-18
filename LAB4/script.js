@@ -1,4 +1,4 @@
-fetch('./products.json')
+fetch('https://raw.githubusercontent.com/2020147560/HomeworkRepository/master/LAB4/product.json')
     .then(function(response) {
         return response.json;
     })
