@@ -4,7 +4,6 @@ fetch('product.json')
     })
     .then(function(json) {
         let products = json;
-        console.log(products);
         initialize(products);
     })
     .catch(function(err) {
@@ -24,6 +23,7 @@ function initialize(products) {
     let finalGroup;
 
     finalGroup = products;
+    alert(finalGroup.length);
     updateDisplay();
 
     categoryGroup = [];
