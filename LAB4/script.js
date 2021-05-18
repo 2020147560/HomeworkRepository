@@ -1,6 +1,6 @@
 fetch('product.json')
     .then(function(response) {
-        return response.json;
+        return response.json();
     })
     .then(function(json) {
         let products = json;
