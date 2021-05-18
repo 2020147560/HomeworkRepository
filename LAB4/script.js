@@ -23,7 +23,6 @@ function initialize(products) {
     let finalGroup;
 
     finalGroup = products;
-    alert(finalGroup.length);
     updateDisplay();
 
     categoryGroup = [];
