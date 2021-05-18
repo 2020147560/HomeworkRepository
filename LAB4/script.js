@@ -4,6 +4,7 @@ fetch('https://raw.githubusercontent.com/2020147560/HomeworkRepository/master/LA
     })
     .then(function(json) {
         let products = json;
+        console.log(products);
         initialize(products);
     })
     .catch(function(err) {
