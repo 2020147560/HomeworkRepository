@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Main Page</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1 id="header">Welcome to Internet Programming Shop</h1>
+        </div>
+        <div class="top">
+            <button onclick="window.location.href='./index.html';" class="button">Main Page</button>
+            <button onclick="window.location.href='./login.html';" class="button">Login</button>
+            <button onclick="window.location.href='./signup.html';" class="button">Signup</button>
+        </div>
+        <hr class="page-break">
+        <br>
+        <h2>Products</h2>
+        <hr class="page-break">
+        <br>
+        <div class="main">
+            <aside class="sideBar">
+                <form>
+                    <div class="search">
+                        <label for="category">Choose a category:</label>
+                        <select id="category">
+                            <option selected>All</option>
+                            <option>Java</option>
+                            <option>HTML</option>
+                            <option>CSS</option>
+                            <option>XML</option>
+                        </select>
+                    </div>
+                    <div class="search">
+                        <label for="search">Enter search term:</label>
+                        <input type="text" id="search" placeholder="e.g. HTML">
+                    </div>
+                    <div class="search">
+                        <button id="searchButton">Filter results</button>
+                    </div>
+                </form>
+            </aside>
+            <main class="items">
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
