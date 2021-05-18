@@ -4,6 +4,7 @@ fetch('product.json')
     })
     .then(function(json) {
         let products = json;
+        console.log(products[1]);
         initialize(products);
     })
     .catch(function(err) {
