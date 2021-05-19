@@ -1,0 +1,74 @@
+[
+    {
+        "type": "java",
+        "name": "Java: Java For Beginners Guide",
+        "img": "java1.jpg",
+        "price": "7.00"
+    },
+    {
+        "type": "java",
+        "name": "Java Progamming: The Beginning Beginner's Guide",
+        "img": "java2.jpg",
+        "price": "9.35"
+    },
+    {
+        "type": "java",
+        "name": "Java: Programming Basics for Absolute Beginners",
+        "img": "java3.jpg",
+        "price": "16.40"
+    },
+    {
+        "type": "html",
+        "name": "HTML Black Book",
+        "img": "html1.jpg",
+        "price": "60.00"
+    },
+    {
+        "type": "html",
+        "name": "HTML & CSS: The Complete Reference",
+        "img": "html2.jpg",
+        "price": "24.00"
+    },
+    {
+        "type": "html",
+        "name": "Introducing HTML5",
+        "img": "html3.jpg",
+        "price": "9.50"
+    },
+    {
+        "type": "css",
+        "name": "Mastering CSS",
+        "img": "css1.jpg",
+        "price": "33.19"
+    },
+    {
+        "type": "css",
+        "name": "Beginning CSS Web Development",
+        "img": "css2.jpg",
+        "price": "7.75"
+    },
+    {
+        "type": "css",
+        "name": "CSS Pocket Reference",
+        "img": "css3.jpg",
+        "price": "9.99"
+    },
+    {
+        "type": "xml",
+        "name": "XML: The Complete Reference",
+        "img": "xml1.jpg",
+        "price": "60.39"
+    },
+    {
+        "type": "xml",
+        "name": "XML Black Book 2nd Edition",
+        "img": "xml2.jpg",
+        "price": "41.30"
+    },
+    {
+        "type": "xml",
+        "name": "XML Crash Course",
+        "img": "xml3.jpg",
+        "price": "9.80"
+    }
+]
