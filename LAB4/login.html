@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Login Page</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <h1 class="header">Welcome to Internet Programming Shop</h1>
+        <div class="top">
+            <button onclick="window.location.href='./index.html';" class="button">Main Page</button>
+            <button onclick="window.location.href='./signup.html';" class="button">Signup</button>
+        </div>
+        <hr class="page-break">
+        <div class="body">
+            <form method = "GET" autocomplete="on" action = "./signup.html">
+                <h4>Member Information (Required) </h4>
+                <p>
+                    <label for="ID">User ID: </label>
+                    <input class = "input" type = "text" id="ID" name = "ID" placeholder = "Please input ID" autofocus = "on" required/>
+                </p>
+                <p>
+                    <label for="password">Password: </label>
+                    <input class = "input" type = "password" id = "password" name = "password" placeholder = "Please input password" autocomplete="off" required/>
+                </p>
+                <p>
+                    <label for="pass">Confirm Password: </label>
+                    <input class = "input" type = "password" id="pass" name = "confirm" placeholder = "Please re-enter password" autocomplete="off" required/>
+                </p>
+                <p>
+                    <input class="click" id="submit" type = "submit" value = "Login"/>
+                    <form action = "https://2020147560.github.io/HomeworkRepository/LAB2/signup.html" method = "get" >
+                        <input class="click" id="reset" type = "submit" value = "Signup" formnovalidate/>
+                    </form>
+                </p>
+            </form>
+        </div>
+        <hr class="page-break">
+    </body>
+</html>

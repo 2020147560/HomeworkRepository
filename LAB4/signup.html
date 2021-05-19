@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Signup Page</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <h1 class="header">Welcome to Internet Programming Shop</h1>
+        <div class="top">
+            <button onclick="window.location.href='./index.html';" class="button">Main Page</button>
+            <button onclick="window.location.href='./login.html';" class="button">Login</button>
+        </div>
+        <hr class="page-break">
+        <div class="body">
+            <form method = "GET" autocomplete = "on" action = "./login.html">
+                <h4>Personal Information (Required)</h4>
+                <p>
+                    <label for="name">Name: </label>
+                    <input class = "input" type = "text" id = "name" name = "name" placeholder = "Please input name" autofocus/>
+                </p>
+                <p>
+                    <label for="birthdate">Date of Birth (dd/mm/yyyy): </label>
+                    <input class = "input" type = "date" id="birthdate" name = "date" value = "2021-01-01"/>
+                </p>
+                <p>
+                    <label for="tel">Phone Number: </label>
+                    <input class = "input" type = "tel" id = "tel" name = "tel" placeholder = "###-####-####" pattern = "\d{3}-\d{4}-\d{4}" required/>
+                </p>
+                <p>
+                    <label for="email">Email: </label>
+                    <input class = "input" type = "email" id = "email" name = "email" placeholder = "name@domain.com" required/>
+                </p>
+                <p>
+                    <label for="ID">User ID: </label>
+                    <input class = "input" type = "text" id = "ID" name = "ID" placeholder = "Please input ID"/>
+                </p>
+                <p>
+                    <label for = "password">Password: </label>
+                    <input class = "input" type = "password" id = "password" name = "password" minlength = "8" placeholder="Minimum 8 characters " required/>
+                </p>
+                <p>
+                    <label for="pass">Confirm Password: </label>
+                    <input class = "input" type = "password" id = "pass" name = "confirm" minlength = "8" placeholder="Please re-enter password " required/>
+                </p>
+                <p>
+                    <input class="click" id="submit" type = "submit" value = "Signup"/>
+                    <input class="click" id="reset" type = "reset" value = "Cancel"/>
+                </p>
+            </form>
+        </div>
+        <hr class="page-break">
+    </body>
+</html>
