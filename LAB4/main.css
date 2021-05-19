@@ -179,13 +179,11 @@ section {
 section img {
     height: 300px;
     width: 300px;
-    margin: 5px;
-    justify-content: center;
 }
 
 .clickable {
-    width: 285px;
-    height: 285px;
+    width: 300px;
+    height: 300px;
     position: absolute;
     text-align: center;
     opacity: 0;
