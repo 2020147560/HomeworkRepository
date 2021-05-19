@@ -167,4 +167,29 @@ div.header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    width: 1020px;
+}
+
+section {
+    width: 45%;
+    margin: 5px;
+    position: relative;
+}
+
+section img {
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+    justify-content: center;
+}
+
+.clickable {
+    width: 285px;
+    height: 285px;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: aliceblue;
+    font-size: x-large;
 }

@@ -1,15 +1,11 @@
-fetch('https://raw.githubusercontent.com/2020147560/HomeworkRepository/master/LAB4/product.json')
-    .then(function(response) {
-        return response.json;
-    })
-    .then(function(json) {
-        let products = json;
-        console.log(products);
-        initialize(products);
-    })
-    .catch(function(err) {
-        console.log('Fetch problem: ' + err.message);
-    });
+const myRequest = new Request('product.json')
+let counter = 4;
+
+fetch(myRequest).then(response => response.json()).then(function(json) {
+    let products = json;
+    initialize(products);
+})
+    .catch(console.error);
 
 function initialize(products) {
     const category = document.getElementById('category')
@@ -67,7 +63,7 @@ function initialize(products) {
             let lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
     
             for(let i = 0; i < categoryGroup.length; i++) {
-                if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
+                if(categoryGroup[i].name.toLowerCase().includes(lowerCaseSearchTerm)) {
                     finalGroup.push(categoryGroup[i]);
                 }
             }
@@ -86,40 +82,115 @@ function initialize(products) {
             para.textContent = 'No results to display!';
             main.appendChild(para);
         } else {
-            for(let i = 0; i < finalGroup.length; i++) {
-                fetchImg(finalGroup[i]);
+            for(let i = 0; i < 4; i++) {
+                fetchImg(finalGroup[i], i);
             }
         }
     }
     
-    function fetchImg(product) {
-        let url = 'images/' + product.img;
-        fetch(url).then(function(response) {
-            return response.blob();
-        }).then(function(blob) {
-            let objURL = URL.createObjectURL(blob);
-            showProduct(objURL, product);
-        });
+    function fetchImg(product, i) {
+        let url = './images/' + product.img;
+        showProduct(url, product, i);
     }
     
-    function showProduct(objURL, product) {
+    function showProduct(objURL, product, i) {
         const section = document.createElement('section');
-        const heading = document.createElement('h2');
-        const para = document.createElement('p');
         const img = document.createElement('img');
-    
-        section.setAttribute('class', product.type);
-    
-        heading.textContent = product.name.replace(product.name.charAt(0), product.name.charAt(0).toUpperCase());
-    
-        para.textContent = '$' + product.price.toFixed(2);
-    
+        const container = document.createElement('div');
+        const prompt = document.createElement('p');
+        const info = document.createElement('p');
+        const price = document.createElement('p');
+
+        section.setAttribute('class', 'onClickTextOverImage');
+
+        container.setAttribute('class', 'clickable');
+        container.id = i;
+        container.style.opacity = "0";
+        container.onclick = function(){
+            var x = document.getElementById(this.id);
+            if(x.style.opacity === "0"){
+                x.style.opacity = "1";
+            } else if(x.style.opacity === "1"){
+                x.style.opacity = "0";
+            } else {
+                x.style.opacity = "0";
+            }
+        }
+
+        prompt.textContent = "Click to see more";
+
+        info.textContent = product.name;
+        price.textContent = '$' + product.price;
+            
         img.src = objURL;
         img.alt = product.name;
-    
+
         main.appendChild(section);
-        section.appendChild(heading);
-        section.appendChild(para);
+        section.appendChild(container);
+        container.appendChild(info);
+        container.appendChild(price)
         section.appendChild(img);
+        section.appendChild(prompt);
     }
 }
+
+window.addEventListener('scroll', () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if(clientHeight + scrollTop >= scrollHeight - 3) {
+        load();
+    }
+});
+
+function load() {
+    const main = document.querySelector('main');
+
+    var start = counter;
+    var end = start + 3;
+    counter = end;
+
+    fetch(myRequest).then(response => response.json()).then(function(json) {
+        let products = json;
+        for(start; start < end; start++) {
+            const section = document.createElement('section');
+            const img = document.createElement('img');
+            const container = document.createElement('div');
+            const prompt = document.createElement('p');
+            const info = document.createElement('p');
+            const price = document.createElement('p');
+
+            let url = './images/' + products[start].img;
+    
+            section.setAttribute('class', 'onClickTextOverImage');
+
+            container.setAttribute('class', 'clickable');
+            container.id = start;
+            container.style.opacity = "0";
+            container.onclick = function(){
+                var x = document.getElementById(this.id);
+                if(x.style.opacity === "0"){
+                    x.style.opacity = "1";
+                } else if(x.style.opacity === "1"){
+                    x.style.opacity = "0";
+                } else {
+                    x.style.opacity = "0";
+                }
+            }
+
+            prompt.textContent = "Click to see more";
+
+            info.textContent = products[start].name;
+            price.textContent = '$' + products[start].price;
+            
+            img.src = url;
+            img.alt = products[start].name;
+    
+            main.appendChild(section);
+            section.appendChild(container);
+            container.appendChild(info);
+            container.appendChild(price);
+            section.appendChild(img);
+            section.appendChild(prompt);
+        }
+    })
+        .catch(console.error);
+};
